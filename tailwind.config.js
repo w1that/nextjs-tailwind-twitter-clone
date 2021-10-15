@@ -7,6 +7,7 @@ module.exports = {
         gray: {
           twitter: '#d9d9d9',
           hover:'#031018',
+          darkhover:"#080808",
           text:'#676F76'
         },
         twitterblue:{
