@@ -14,7 +14,7 @@ function TweetField() {
     <div className="px-3 pt-3 pb-1 flex border-b border-gray-700 ">
       <img
         className="rounded-full w-12 h-12 "
-        src="https://image.freepik.com/free-photo/half-profile-image-handsome-young-caucasian-man-with-good-skin-brown-eyes-black-stylish-hair-stubble-posing-isolated-against-blank-wall-looking-front-him-smiling_343059-4560.jpg"
+        src="https://pbs.twimg.com/profile_images/1322852753706639362/7djDp5aC_400x400.png"
       ></img>
       <div className="px-2 w-full">
         <textarea
@@ -34,11 +34,11 @@ function TweetField() {
         )}
 
         <div className="text-twitterblue-default flex items-center justify-between py-2">
-            <div><span className="cursor-pointer px-2">media</span>
-            <span className="cursor-pointer px-2">gif</span>
-            <span className="cursor-pointer px-2">anket</span>
-            <span className="cursor-pointer px-2">emoji</span>
-            <span className="cursor-pointer px-2">planla</span></div>
+            <div className="flex"><span className="cursor-pointer py-1 rounded-full hover:bg-gray-hover"><img width="25px" src="/gallery.png" /></span>
+            <span className="cursor-pointer px-2 py-1 rounded-full hover:bg-gray-hover"><img width="25px" src="/gif.png" /></span>
+            <span className="cursor-pointer px-2 py-1 rounded-full hover:bg-gray-hover"><img width="25px" src="/questionnaire.png" /></span>
+            <span className="cursor-pointer px-2 py-1 rounded-full hover:bg-gray-hover"><img width="25px" src="/emoji.png" /></span>
+            <span className="cursor-pointer px-2 py-1 rounded-full hover:bg-gray-hover"><img width="25px" src="/calendar.png" /></span></div>
             <div>
             {input?<label className={(280-inputLength)<0?'text-red-600':'text-twitterblue-default'}>{(280-inputLength).toString()}</label>:''}
             <button onClick={()=>console.log("basıldı")} disabled={inputLength>280?"true":''} className={`text-white py-2 px-5 bg-twitterblue-default font-medium rounded-full ${input?'':'opacity-50'} ${(280-inputLength)<0?'opacity-50':''}`}>Tweetle</button>

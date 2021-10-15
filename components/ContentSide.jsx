@@ -1,5 +1,6 @@
 import React from "react";
 import TweetField from "./TweetField";
+import TweetsList from "./TweetsList";
 
 function ContentSide() {
   return (
@@ -9,6 +10,9 @@ function ContentSide() {
         <img className="w-8 mr-2" src="/shine.png"></img>
       </div>
       <TweetField/>
+      <TweetsList/>
+
+      
     </div>
   );
 }
