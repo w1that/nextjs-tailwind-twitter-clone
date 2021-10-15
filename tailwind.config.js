@@ -9,8 +9,8 @@ module.exports = {
         },
         twitterblue:{
           default:'#1D9BF0',
-          hover:"#1A8CD8"
-
+          hover:"#1A8CD8",
+          inactive:'#0E4D77'
         },
         menuItem:{
           hover:'#161616'
