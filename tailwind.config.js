@@ -8,7 +8,8 @@ module.exports = {
           twitter: '#d9d9d9',
           hover:'#031018',
           darkhover:"#080808",
-          text:'#676F76'
+          text:'#676F76',
+          searchbarBack:'#202327',
         },
         twitterblue:{
           default:'#1D9BF0',
