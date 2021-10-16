@@ -2,15 +2,26 @@ import { tweets } from "../../../data";
 import Cors from 'cors'
 
 // Initialize the cors middleware
-const cors = initMiddleware(
-  // You can read more about the available options here: https://github.com/expressjs/cors#configuration-options
-  Cors({
-    // Only allow requests with GET, POST and OPTIONS
-    methods: ['GET', 'POST', 'OPTIONS'],
-  })
-)
+const cors = Cors({
+  methods: ['GET', 'HEAD'],
+})
 
-export default function handler(req, res) {
-  await cors(req,res)
+// Helper method to wait for a middleware to execute before continuing
+// And to throw an error when an error happens in a middleware
+function runMiddleware(req, res, fn) {
+  return new Promise((resolve, reject) => {
+    fn(req, res, (result) => {
+      if (result instanceof Error) {
+        return reject(result)
+      }
+
+      return resolve(result)
+    })
+  })
+}
+
+export default async function handler(req, res) {
+    // Run the middleware
+    await runMiddleware(req, res, cors)
     res.status(200).json(tweets)
   }
