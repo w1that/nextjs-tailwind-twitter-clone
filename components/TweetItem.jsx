@@ -1,13 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-function TweetItem({ user, tweet }) {
+function TweetItem({userId, tweet }) {
   const [isDots, setIsDots] = useState(false);
-
+  const [user, setUser] = useState({})
   function dotsHandler() {
     setIsDots(!isDots);
   }
 
+  useEffect( async () => {
+    const res = await fetch('http://localhost:3000/api/user')
+    const users = await res.json()
+    users.map(user => {
+      if(user.id===userId){
+        setUser(user)
+        return ' '
+      }
+    });
+  }, [])
+
   return (
+    
     <div className="px-3 pt-3 pb-1 flex border-b border-gray-700 w-full relative">
       <img className="rounded-full w-12 h-12 " src={user.userImage}></img>
       <div className="px-4 cursor-pointer pb-4">
@@ -82,5 +94,19 @@ function TweetItem({ user, tweet }) {
     </div>
   );
 }
+
+// export async function getStaticProps() {
+//   // Call an external API endpoint to get posts
+//   const res = await fetch('http://localhost:3000/api/user')
+//   const users = await res.json()
+
+//   // By returning { props: { posts } }, the Blog component
+//   // will receive `posts` as a prop at build time
+//   return {
+//     props: {
+//       users,
+//     },
+//   }
+// }
 
 export default TweetItem;
