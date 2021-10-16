@@ -4,8 +4,8 @@ import Link from 'next/link'
 
 function LeftSideMenu() {
     return (
-        <div className=" w-1/5 ">
-            <div className="bg-white w-1/5 rounded-3xl hover:opacity-15 my-4">
+        <div className=" sm:w-1/5 hidden sm:inline">
+            <div className="bg-white  w-1/5 rounded-3xl hover:opacity-15 my-4">
             <Link href="/">
                 <a><img src="/twitter-sign.png"></img></a>
             </Link>

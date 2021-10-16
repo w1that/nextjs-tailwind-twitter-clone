@@ -11,7 +11,7 @@ function TweetField() {
     console.log(inputLength)
   }
   return (
-    <div className="px-3 pt-3 pb-1 flex border-b border-gray-700 ">
+    <div className="px-3 pt-3 pb-1 w-full flex border-b border-gray-700 hidden sm:inline-flex">
       <img
         className="rounded-full w-12 h-12 "
         src="https://pbs.twimg.com/profile_images/1322852753706639362/7djDp5aC_400x400.png"
