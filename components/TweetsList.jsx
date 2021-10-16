@@ -23,19 +23,19 @@ function TweetsList() {
     )
 }
 
-export const getStaticProps = async () =>  {
-  // Call an external API endpoint to get posts
-  const res = await fetch('http://localhost:3000/api/tweet')
-  const tweets = await res.json()
+// export const getStaticProps = async () =>  {
+//   // Call an external API endpoint to get posts
+//   const res = await fetch('http://localhost:3000/api/tweet')
+//   const tweets = await res.json()
   
-  // By returning { props: { posts } }, the Blog component
-  // will receive `posts` as a prop at build time
-  return {
-    props: {
-      tweets,
-    },
-  }
-}
+//   // By returning { props: { posts } }, the Blog component
+//   // will receive `posts` as a prop at build time
+//   return {
+//     props: {
+//       tweets,
+//     },
+//   }
+// }
 
 
 export default TweetsList
