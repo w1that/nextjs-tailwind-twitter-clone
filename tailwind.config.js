@@ -12,6 +12,7 @@ module.exports = {
           searchbarBack:'#202327',
           agenda:'#15181C',
           agendahover:'#1C1F23',
+          buttonbg:'#D7DBDC',
         },
         twitterblue:{
           default:'#1D9BF0',

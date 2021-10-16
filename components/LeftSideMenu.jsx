@@ -1,13 +1,19 @@
 import React from 'react'
 import LeftSideItem from './LeftSideItem'
+import Link from 'next/link'
 
 function LeftSideMenu() {
     return (
         <div className=" w-1/5 ">
-            <div className="bg-white w-1/5 rounded-3xl hover:opacity-15 my-4"><img src="/twitter-sign.png"></img></div>
+            <div className="bg-white w-1/5 rounded-3xl hover:opacity-15 my-4">
+            <Link href="/">
+                <a><img src="/twitter-sign.png"></img></a>
+            </Link>
+
+            </div>
             <div>
                 <LeftSideItem title="Anasayfa"></LeftSideItem>
-                <LeftSideItem title="Keşfet"></LeftSideItem>
+                <Link href="/explore"><a><LeftSideItem title="Keşfet"></LeftSideItem></a></Link>
                 <LeftSideItem title="Bildirimler"></LeftSideItem>
                 <LeftSideItem title="Mesajlar"></LeftSideItem>
                 <LeftSideItem title="Yer İşaretleri"></LeftSideItem>
